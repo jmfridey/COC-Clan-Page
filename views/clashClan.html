@@ -1,0 +1,88 @@
+<div class="jumbotron" ng-if="clanData.reason === 'inMaintenance' || clanData.reason === 'accessDenied.invalidIp'">
+  <h1 class="display-3">Error!</h1>
+  <p class="lead">An error has occured while trying to load the Clash of Clans API.</p>
+  <hr class="my-4">
+  <div class="alert alert-danger">{{ clanData.message}}</div>
+</div>
+<div ng-if="clanData.reason != 'inMaintenance' || clanData.reason !== 'accessDenied.invalidIp'" class="clan">
+  <div class="player-nav center">
+    <a href="#!/"><span class="home-village small-shadow"><span class="shine"></span><img src="images/misc/sword-top-right.png">Home Village</span></a>
+    <a href="#!/builder-base"><span class="builder-base small-shadow"><span class="shine"></span><img src="images/misc/double-axe.png">Builder Base</span></a>
+  </div>
+  <div class="clans-info box-shadow">
+    <div class="clans-stats left">
+      <div class="clans-badge"><img ng-src="{{ clanData.badgeUrls.medium }}"></div>
+      <div class="clan-id">
+        <div class="clans-name left small-shadow">{{ clanData.name }}</div>
+        <div class="clans-tag right">{{ clanData.tag }}</div>
+      </div>
+      <div class="clans-points small-shadow underline clear">
+        <div class="clans-label">Total points:</div>
+        <div class="clans-home-points">{{ clanData.clanPoints }} <img src="images/player/Trophy.png"></div>
+        <div class="clans-bb-points">{{ clanData.clanVersusPoints }} <img src="images/builderbase/Trophy.png"></div>
+      </div>
+      <div class="clans-wars-won small-shadow underline clear">
+        <div class="clans-label">Wars Won</div>
+        <div class="clans-warwins">{{ clanData.warWins }}</div>
+      </div>
+      <div class="clans-war-win-streak small-shadow underline clear">
+        <div class="clans-label">War Win Streak:</div>
+        <div class="clans-war-streak">{{ clanData.warWinStreak }}</div>
+      </div>
+      <div class="clans-members small-shadow underline clear">
+        <div class="clans-label">Members:</div>
+        <div class="clans-members-total">{{ clanData.members }}/50</div>
+      </div>
+      <div class="clans-type small-shadow underline clear">
+        <div class="clans-label">Type:</div>
+        <div class="clans-show-type" ng-if="clanData.type === 'inviteOnly'">Invite only</div>
+        <div class="clans-show-type" ng-if="clanData.type === 'open'">Anyone can join</div>
+        <div class="clans-show-type" ng-if="clanData.type === 'closed'">Closed</div>
+      </div>
+      <div class="clans-required-trophies small-shadow underline clear">
+        <div class="clans-label">Required Trophies:</div>
+        <div class="clans-required-home-trophies">{{ clanData.requiredTrophies }} <img src="images/player/Trophy.png"></div>
+        <div class="clans-required-bb-trophies">0 <img src="images/builderbase/Trophy.png"></div>
+      </div>
+      <div class="clans-frequency small-shadow underline clear">
+        <div class="clans-label">War Frequency:</div>
+        <div class="clans-show-type">{{ clanData.warFrequency }}</div>
+      </div>
+      <div class="clans-location small-shadow underline clear">
+        <div class="clans-label">Clan Location:</div>
+        <div class="clans-country">{{ clanData.location.name }}</div>
+      </div>
+      <div class="share"><img src="images/misc/share.png"></div>
+    </div>
+    <div class="clans-desc left">
+      {{ clanData.description }}
+      <div class="clans-bookmark"><a href="" id="bookmarkme" rel="sidebar" title="bookmark this page"><img src="images/clan/Bookmark.png"></a></div>
+    </div>
+  </div>
+  <div class="clan-members" ng-repeat="member in clanData.memberList">
+    <a href="././#!/player/{{ member.tag | urlencode }}">
+      <span class="shine"></span>
+      <div class="clan-player-rank left small-shadow">{{ member.clanRank }}. <span class="rank-equal">=</span></div>
+      <div class="clan-player-league left"><img ng-src="{{ member.league.iconUrls.small }}"></div>
+      <div class="clan-player-level left tiny-shadow">
+        <div class="clan-player-level-bg center">{{ member.expLevel }}</div>
+      </div>
+      <div class="clan-player-info left">
+        <div class="clan-player-name small-shadow">{{ member.name }}</div>
+        <div class="clan-player-role" ng-if="member.role === 'leader'">Leader</div>
+        <div class="clan-player-role" ng-if="member.role === 'coLeader'">Co-leader</div>
+        <div class="clan-player-role" ng-if="member.role === 'admin'">Elder</div>
+        <div class="clan-player-role" ng-if="member.role === 'member'"></div>
+      </div>
+      <div class="clan-troops-donated center left">
+        Troops donated:<div class="clan-troops-donated-total">{{ member.donations }}</div>
+      </div>
+      <div class="clan-troops-recieved center left">
+        Troops recieved:<div class="clan-troops-recieved-total">{{ member.donationsReceived }}</div>
+      </div>
+      <div class="clan-player-trophies large-shadow">
+        <div class="clan-player-trophies-total right">{{ member.trophies }} <img src="images/player/Trophy.png"></div>
+      </div>
+    </a>
+  </div>
+</div>

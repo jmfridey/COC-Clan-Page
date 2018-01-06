@@ -1,0 +1,39 @@
+.container { max-width: 992px !important; }
+
+/* FONT SIZES */
+.league-name, .bb-league-name, .underline { font-size: 1.068em; }
+.clans-desc { font-size: 0.840em; }
+.clan-player-rank, .title-head, .player-tag, .clan-player-info, .clan-player-level { font-size: 1.290em; }
+.a-status, .bb-stats-info, .clan-troops-donated, .clan-troops-recieved { font-size: 0.775em; }
+.nav, .a-title, .clans-tag, .stats-info { font-size: 0.990em; }
+.clan-troops-donated-total, .clan-troops-recieved-total, .all-time-best, .war-stars-won, .a-desc { font-size: 0.863em; }
+.a-status, .bb-stats-info, .clan-troops-donated, .clan-troops-recieved { font-size: 0.675em; }
+
+/* BLOCK ELEMENT SIZING */
+.player-nav { margin: 15px 0 5px 0; }
+.clans-info { height: 290px; }
+.clans-label { width: 41%; }
+.clans-home-points, .clans-bb-points, .clans-required-home-trophies, .clans-required-bb-trophies { width: 120px; }
+.clans-warwins, .clans-war-streak, .clans-members-total, .clans-show-type, .clans-show-type, .clans-country { width: 240px; }
+.clan-player-info { width: 315px; }
+.clan-troops-donated { padding: 5px 0 5px 20px; }
+.clan-player-rank { height: 100%; width: 79px; }
+.clan-player-league { height: 100%; padding: 5px 5px; }
+.clan-player-league img { height: 50px; }
+.clan-player-trophies-total { margin-top: 14px; padding: 0 54px 0 20px; }
+.clan-player-trophies img { height: 40px }
+.clan-members { height: 68px; }
+.clans-required-trophies img, .clans-points img { height: 26px; }
+.stats-title { width: 17.7%; }
+.a-stars img { height: 50px; }
+.a-list { height: 62px; }
+.a-status .progress { margin: 15px 5px; }
+.a-status .progress { width: 175px; }
+.progress { font-size: .65rem !important; }
+.a-status .progress span { width: 175px; }
+.a-status span.shine { width: 171px; }
+.town-hall { width: 9%; }
+.troops { width: 48%; }
+.spells { width: 25%; }
+.heroes { width: 14%; }
+.league-icon img { max-width: 120px; min-width: 100px; max-height: 120px; min-height: 120px; }

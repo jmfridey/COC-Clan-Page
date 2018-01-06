@@ -1,0 +1,220 @@
+/*-----------------------------------------------------------------------------
+COC-Clan Screen Stylesheet
+
+version:   1.0
+date:      01/01/18
+author:    Josh Fridey
+email:     joshfridey@me.com
+website:   http://www.joshfridey.com
+----------------------------------------------------------------------------- */
+/* IMPORT FONTS */
+@font-face { font-family: supercellMagic; src: url(Supercell-magic-webfont.ttf); }
+@font-face { font-family: CCBackBeat; src: url(CCBackBeat-Light.ttf); }
+
+/* IE10+ */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+
+}
+
+/* MAIN ELEMENTS */
+body { background: url('../images/background.png') center center/cover no-repeat fixed; font: normal 1.000em/1.5 supercellMagic; }
+.background { background: rgba(0, 0, 0, 0.5); height: 100%; left: 0; position: fixed; top: 0; width: 100%; }
+.container { background: #5d5552; border-bottom: 3px solid #4f4b42; border-radius: 15px; border-top: 2px solid #d4ccca; box-shadow: 0px 2px 3px 3px #000000; position: relative; margin: 25px auto; padding: 10px !important; }
+.container span.shine { background: linear-gradient(rgba(255,255,255,0.25), rgba(255,255,255,0.05)); border-radius: 10px; height: 41px; position: absolute; width: 98.4%; }
+.main { background: #e8e8de; border-radius: 10px; padding: 10px; position: relative; }
+.clan { margin-bottom: -5px; }
+.player { margin-bottom: -8px; }
+
+
+/* NAVIGATION */
+.nav { margin: 0 40px; }
+.nav a { border-radius: 10px 10px 0 0; border-top: 2px solid #FFFFFF; padding: 18px 45px 12px; }
+.nav a.active { background: #eaeae2; box-shadow: -2px -1px 3px #222222; position: relative; }
+.nav a.active::before { background: radial-gradient(circle at 0 0, rgba(204,0,0,0) 10px, #eaeae2 11px); bottom: 0; content: ''; height: 10px; left: -10px; position: absolute; width: 10px; }
+.nav a.active::after { background: radial-gradient(circle at 100% 0, rgba(204,0,0,0) 10px, #eaeae2 11px); bottom: 0; content: ''; height: 10px; right: -10px; position: absolute; width: 10px; }
+.nav .link { position: relative; z-index: 2; }
+.nav span.shine { background: linear-gradient(rgba(255,255,255,1), rgba(255,255,255,0.5)); border-radius: 10px; height: 55%; left: 3px; top: 2px; width: 94.8%; }
+
+.player-nav { margin: 15px 0 10px 0; min-height: 50px; }
+.player-nav span { border-radius: 8px; padding: 12px 15.8% 15px; position: relative; }
+.player-nav span.shine { background: linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.1)); border-radius: 7px; height: 22px; left: 3px; position: absolute; top: 3px; width: 98.8%; }
+.player-nav span img { height: 30px; left: 10px; position: absolute; top: 10px; }
+.home-village, .bb-builder-base { background: #bab8a9; border-bottom: 3px solid #f8f6f7; box-shadow: inset 0 3px 0 #6c6b67; }
+.builder-base, .bb-home-village { background: #857b72; border-bottom: 3px solid #53473b; box-shadow: 0px 3px 0px rgba(0,0,0,0.2); }
+.home-village, .bb-home-village { margin-right: 5px; }
+.builder-base, .bb-builder-base { margin-left: 5px; }
+
+
+/* ASSIGN FONTS */
+body, .all-time-best, .war-stars-won, .clans-info, .clan-troops-donated,
+.clan-troops-recieved, .stats-info, .bb-stats-info, .player-tag, .clan-role, .a-desc,
+.a-status, .clan-player-role, .avatar span { font-family: CCBackBeat; }
+.nav, .main, .clans-name { font-family: supercellMagic; }
+.rank-equal { font-family: Arial Black; }
+
+
+/* FONT SIZES */
+.avatar span, .clan-player-role { font-size: 0.625em; }
+.progress, .stats-total { font-size: 0.688em; }
+.a-status, .clan-troops-donated, .clan-troops-recieved { font-size: 0.875em; }
+.clan-troops-donated-total, .clan-troops-recieved-total, .all-time-best, .war-stars-won, .a-desc { font-size: 1.063em; }
+.clans-desc { font-size: 1.090em; }
+.league-name, .bb-league-name, .underline { font-size: 1.188em; }
+.nav, .a-title, .clans-tag, .stats-info, .bb-stats-info { font-size: 1.290em; }
+.clan-player-trophies, .clan-role, .avatars, .player-nav { font-size: 1.313em; }
+.clan-player-rank, .title-head, .player-tag, .clan-player-info, .clan-player-level { font-size: 	1.375em; }
+.clan-name { font-size: 1.500em; }
+.clans-name { font-size: 1.563em; }
+.player-level, .league-bg { font-size: 1.625em; }
+.player-name { font-size: 1.875em; }
+.league-trophy, .bb-league-trophy { font-size: 2.063em; }
+
+
+/* FONT COLORS */
+.container, .progress { color: #FFFFFF; }
+.clans-desc, .clan-troops-donated-total, .clan-troops-recieved-total, .a-desc { color: #000000; }
+.clans-name { color: #feffcd; }
+.clans-tag { color: #796968; }
+.clan-player-role { color: #6a675a; }
+.clan-troops-donated, .clan-troops-recieved { color: #71706e; }
+.a-status { color: #5e6470; }
+
+
+/* LINK COLORS */
+a { color: #FFF !important; }
+a:active { color: #FFF !important; }
+a:visited { color: #FFF !important;  }
+a:hover { color: #FFF; text-decoration: none !important; }
+
+/* EFFECTS */
+.level-shadow { text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000  }
+.tiny-shadow { text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 2px 0 #000, 1px 2px 0 #000; }
+.small-shadow { text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -2px 3px 0px #000, 1px 3px 0 #000; }
+.large-shadow { text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 4px 0px #000, 1px 1px 0 #000; }
+.xlarge-shadow { text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 5px 0px #000, 1px 1px 0 #000; }
+
+.box-shadow { box-shadow: 0px 2px 1px rgba(0,0,0,0.60); }
+.underline { border-bottom: 2px solid #59544e; margin-bottom: 2px; }
+.grayscale{filter:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='saturate' values='0'/></filter></svg>#grayscale");-webkit-filter:grayscale(1);filter:grayscale(1);filter:gray}.grayscale.grayscale-fade{transition:filter .5s}@media screen and (-webkit-min-device-pixel-ratio:0){.grayscale.grayscale-fade{-webkit-transition:-webkit-filter .5s;transition:-webkit-filter .5s}}.grayscale.grayscale-fade:hover,.grayscale.grayscale-off{-webkit-filter:grayscale(0);filter:grayscale(0)}.grayscale.grayscale-replaced{-webkit-filter:none;filter:none}.grayscale.grayscale-replaced>svg{-webkit-transition:opacity .5s ease;transition:opacity .5s ease;opacity:1}.grayscale.grayscale-replaced.grayscale-fade:hover>svg,.grayscale.grayscale-replaced.grayscale-off>svg{opacity:0}
+
+
+/* BOX ELEMENTS */
+.clan-player-rank, .clan-player-league, .clan-player-level, .clan-player-info, .clan-troops-donated, .clan-troops-recieved, .clan-player-trophies-total, .player-level, .town-hall, .a-title, .a-desc, .a-status .progress span, .avatar span, .avatars { display: block; }
+.nav div, .underline div, .shine, .war-stars-won, .all-time-best, .stats-total, .stats-title, .a-list span.shine, .spells, .heroes, .avatar-list, .avatar { display: inline-block; }
+
+.left { float: left; }
+.right { float: right; }
+.center { text-align: center; }
+.clear { clear: both; }
+
+
+.clans-info { background: url(../images/clan/background.png) center center/cover; border-bottom: 3px solid #a9a595; border-radius: 10px; border-top: 3px solid #f7f5f0; height: 315px; margin-bottom: 6px; }
+.clans-stats { border-right: 2px solid #7a756e; height: 100%; padding: 0 5px 0 180px; position: relative; width: 66%; }
+.clans-desc { border-left: 2px solid #d7d3ca; height: 100%; line-height: 1.10; padding: 30px 80px 0 5px; position: relative; width: 34%; }
+.clans-badge { left: 30px; position: absolute; top: 30px; }
+.clans-badge img { height: 125px; }
+.clans-stats .share { top: 3px; right: 5px; }
+.clans-stats .share img { height: 32px; }
+.clan-id { padding: 5px 35px 0 0; }
+.clans-points img { height: 30px; }
+.clans-label { width: 48%; }
+.clans-home-points { text-align: right; width: 135px; }
+.clans-bb-points { text-align: right; width: 135px; }
+.clans-warwins { text-align: right; width: 270px; }
+.clans-war-streak { text-align: right; width: 270px; }
+.clans-members-total { text-align: right; width: 270px; }
+.clans-show-type { text-align: right; text-transform: capitalize; width: 270px; }
+.clans-required-home-trophies { text-align: right; width: 135px; }
+.clans-required-bb-trophies { text-align: right; width: 135px; }
+.clans-country { text-align: right; width: 270px; }
+.clans-required-trophies img { height: 30px; }
+.clans-bookmark { position: absolute; right: 15px; top: -8px; }
+.clans-bookmark img { height: 125px; }
+.clan-members { background: #d6d6cc; border-bottom: 3px solid #e0e0d7; border-radius: 8px; border-top: 3px solid #fcfcf0; box-shadow: 0 3px 1px rgba(0,0,0,0.4); height: 72px; margin-bottom: 6px; padding: 3px 10px; position: relative; }
+.clan-members .shine { top: 3px; left: 3px; background: linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.2)) !important; width: 99.5% !important; height: 45% !important; }
+.clan-player-rank { border-right: 2px solid #a8a7a2; height: 60px; padding: 15px 10px; position: relative; width: 85px; }
+.clan-player-league { border-left: 2px solid #e2e1dc; border-right: 2px solid #a8a7a2; padding: 0 5px; position: relative; }
+.clan-player-league img { height: 58px; }
+.clan-player-level { border-left: 2px solid #e2e1dc; border-right: 2px solid #a8a7a2; padding: 6px 5px; position: relative; }
+.clan-player-level-bg { background: url(../images/player/XP.png); background-size: cover; width: 45px; height: 47px; padding: 6px 0; }
+.clan-player-info { border-left: 2px solid #e2e1dc; border-right: 2px solid #a8a7a2; height: 100%; padding: 5px 5px; position: relative; width: 425px; }
+.clan-player-role { padding: 0 5px; font-weight: bold; margin-top: -2px; }
+.clan-troops-donated { border-left: 2px solid #e2e1dc; padding: 5px 20px; position: relative; }
+.clan-troops-donated-total { background: #efeeea; border-radius: 6px; font-weight: bold; padding: 4px 0 3px; margin: 0 auto; width: 100px; }
+.clan-troops-recieved { padding: 5px 20px; position: relative; }
+.clan-troops-recieved-total { background: #efeeea; border-radius: 6px; font-weight: bold; padding: 4px 0 3px; margin: 0 auto; width: 100px; }
+.clan-player-trophies-total { background: #e7ca7b; padding: 2px 54px 2px 20px; border-radius: 8px; position: relative; border: 2px solid #FFFFFF; margin-top: 11px; width: 135px; }
+.clan-player-trophies img { position: absolute; top: -4px; right: 4px; height: 44px; }
+
+.title-head img { height: 28px; margin-bottom: 10px; }
+.div-border { height: 2px; }
+.player-info { width: 55%; height: 250px; border-radius: 8px 0 0 0; padding: 10px; border: 6px solid #868cac; background: linear-gradient(#a5a9c2, #868cac); position: relative; }
+.league-info { width: 45%; height: 250px; border-radius: 0 8px 0 0; padding: 10px 20px; border: 6px solid #70759b; background: linear-gradient(#999ab8, #70759b); position: relative; }
+.league-stats { margin: 11px 0 0; }
+.league-stats-title { margin: 0 0 0 2px; }
+.bb-league-stats-title { margin: 0 0 0 9px; text-align: left; }
+.war-stars-won { width: 49%; }
+.all-time-best { width: 49%; }
+.stats-info { background: #4e4d79; padding: 5px 12px; margin-bottom: 17px; border-radius: 0 0 8px 8px; border-top: 3px solid #7967a5; border-bottom: 3px solid #6e5a8f; box-shadow: 0px 3px 3px #222222; }
+.bb-stats-info { background: #4e4d79; padding: 5px 12px; margin-bottom: 17px; border-radius: 0 0 8px 8px; border-top: 3px solid #7967a5; border-bottom: 3px solid #6e5a8f; box-shadow: 0px 3px 3px #222222; text-align: right; }
+.town-hall-info { background: linear-gradient(#a8aac3,#868cac); border-bottom: 6px solid #989eb8; border-left: 6px solid #868cac; border-radius: 10px; border-right: 6px solid #868cac; box-shadow: 0px 3px 3px #222222; border-top: 6px solid #868cac; overflow: auto; padding: 13px 10px 20px 10px; }
+.player-level { width: 60px; height: 63px; padding: 10px 0 0 0; background: url('../images/player/XP.png'); background-size: cover; }
+.player-name { margin: 0 0 0 66px; }
+.player-tag { font-weight: bold; color: #525775; margin: -10px 0 0 67px; }
+.clan-badge { position: absolute; margin: 3px 0; }
+.clan-badge img { height: 60px; }
+.clan-name { margin: 0 0 0 66px; }
+.clan-role { margin: -10px 0 0 66px; }
+.share { position: absolute; top: 5px; right: 10px; }
+.share img { height: 50px; }
+.clan-dark { margin: 0 0 0 44px; background: linear-gradient(to right, #332769 , rgba(51,39,105,0)); }
+.bb-lan-dark { margin: 0 0 0 44px; background: linear-gradient(to right, #332769 , rgba(51,39,105,0)); }
+.clan-light { margin: 0 0 0 96px; background: linear-gradient(to right, #9582c2 , rgba(149,130,194,0)); }
+.bb-clan-light { margin: 0 0 0 96px; background: linear-gradient(to right, #9582c2 , rgba(149,130,194,0)); }
+.league-icon { position: absolute; }
+.bb-league-icon { position: absolute; top: 20px; }
+.league-icon img { max-width: 140px; min-width: 120px; max-height: 140px; min-height: 140px; }
+.bb-league-icon img { height: 120px; }
+.league-name { margin: 27px 0 0 64px; background: linear-gradient(to right, rgba(53,57,75,1), rgba(53,57,75,0)); padding: 4px 44px; border-radius: 0 5px 0 0; }
+.bb-league-name { margin: 27px 0 0 100px; background: linear-gradient(to right, rgba(53,57,75,1), rgba(53,57,75,0)); padding: 4px 44px; border-radius: 0 5px 0 0; }
+.league-trophy { margin: 0 0 0 44px; padding: 0; border-radius: 0 0 5px 0; background: linear-gradient(to right, rgba(115,80,176,1) , rgba(115,80,176,0)); }
+.bb-league-trophy { margin: 0 0 0 96px; padding: 0; border-radius: 0 0 0 30px; background: linear-gradient(to right, rgba(115,80,176,1) , rgba(115,80,176,0)); }
+.league-trophy img, .bb-league-trophy img { height: 44px; }
+.league-bg { background: #38385c; padding: 0 0 0 25px; margin-left: 25px; margin-right: 30px; margin-top: 10px; border-radius: 5px; line-height: 1.25; }
+.league-stat-icon { position: absolute; margin-left: -53px; margin-top: -12px; }
+.bb-league-stat-icon { position: absolute; margin-left: -82px; margin-top: -3px; }
+.league-stat-icon img { height: 55px; }
+.bb-league-stat-icon img { height: 39px; }
+.league-stat { margin: 0 0 0 10px; }
+.bb-league-stat { margin: 0 0 0 -10px; }
+.stats-total { margin-right: 9px; width: 50px; background: #2c2c62; text-align: right; border-radius: 4px; padding: 3px 5px; line-height: 1.1; }
+.stats-title { width: 18.3%; padding: 0 9px 2px 0; border-bottom: 2px solid #2e2a4f; text-align: left; }
+.bb-stats-title { width: 18.3%; padding: 0 9px 2px 0; border-bottom: 2px solid #2e2a4f; text-align: left; }
+.stats-dark { background: #4e4d79; }
+.town-hall { width: 8%; margin: 10px 29px 0 0; }
+.town-hall img { height: 100px; margin-top: 10px; }
+.troops { width: 51%; }
+.spells { width: 27%; }
+.heroes { width: 11%; }
+.bb-heroes { width: 11%; }
+.a-list { height: 70px; background: linear-gradient(#a9aeb2, #9ca4af); padding: 4px; border-radius: 6px; border-bottom: 2px solid #dde4ec; margin-bottom: 10px; box-shadow: 0px 2px 2px #222222; overflow: visible; }
+.a-list img { height: 60px; }
+.a-list span.shine { width: 100%; height: 30px; border-radius: 6px; overflow: visible; background: linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.1)); position: relative; }
+.a-stars { margin-right: 5px; }
+.a-stars img { height: 60px; }
+.a-info { height: 100%; }
+.a-title { margin-top: 3px; }
+.a-desc { margin-top: 0; font-weight: bold; }
+.a-status { font-weight: bold; }
+.a-status .progress { margin: 19px 5px; width: 200px; height: 25px; padding: 2px; border-radius: 6px; background-color: #373f4c !important; }
+.a-status .progress span { position: absolute; width: 200px; margin-top: 3px; }
+.a-status .progress-bar { background-color: #45ab01; border-radius: 6px; }
+.a-status span.shine { width: 196px; height: 10px; margin-top: 1px; background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.3)); }
+.a-status-info { margin-top: 10px; }
+.a-status-info img { height: 40px; margin-right: 15px; margin-left: 10px; }
+
+.avatars { line-height: 1.1; }
+.avatar { border-radius: 8px; margin-right: 5px; background: linear-gradient(#5e6578, #696f87); border-bottom: 2px solid #42474d; border-top: 2px solid #a6acc6; border-left: 2px solid #888ca5; border-right: 2px solid #888ca5; }
+.avatar span { width: 19px; height: 16px; background: linear-gradient(rgba(56,56,56,0.85), rgba(19,23,26,0.85)); border: 1px solid rgba(0,0,0,0.85); padding: 1px 0 0 0; top: 25px; left: 3px; border-radius: 3px; position: relative; }
+.avatar .max-level { background: linear-gradient(rgba(236,183,92,0.85), rgba(236,174,87,0.85)); border: 1px solid rgba(233,193,123,0.85); }
+.avatar .ng-hide:not(.ng-animate) { display: block !important; visibility: hidden; }

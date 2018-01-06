@@ -1,0 +1,89 @@
+<div class="jumbotron" ng-if="baseData.reason === 'inMaintenance' || baseData.reason === 'accessDenied.invalidIp'">
+  <h1 class="display-3">Error!</h1>
+  <p class="lead">An error has occured while trying to load the Clash of Clans API.</p>
+  <hr class="my-4">
+  <div class="alert alert-danger">{{ baseData.message}}</div>
+</div>
+<div ng-if="baseData.reason != 'inMaintenance' || baseData.reason !== 'accessDenied.invalidIp'" class="player">
+  <div class="player-nav center">
+    <a href="#!/player/{{ baseData.tag | urlencode }}"><span class="bb-home-village small-shadow"><span class="shine"></span><img src="images/misc/sword-top-right.png">Home Village</span></a>
+    <a href="#!/player/{{ baseData.tag | urlencode }}/builder-base"><span class="bb-builder-base small-shadow"><span class="shine"></span><img src="images/misc/double-axe.png">Builder Base</span></a>
+  </div>
+  <div class="player-block">
+    <div class="player-info left">
+      <div>
+        <div class="player-level center left large-shadow">{{ baseData.expLevel }}</div>
+        <div class="player-name large-shadow">{{ baseData.name }}</div>
+        <div class="player-tag">{{ baseData.tag }}</div>
+      </div>
+      <div class="clan-info">
+        <div class="clan-badge"><img ng-src="{{ baseData.clan.badgeUrls.large }}"></div>
+        <div class="clan-name small-shadow">{{ baseData.clan.name }}</div>
+        <div class="clan-role small-shadow">{{ playerRole }}</div>
+      </div>
+      <div class="share"><img src="images/misc/share.png"></div>
+    </div>
+    <div class="league-info left">
+      <div class="bb-league-icon"><img src="images/misc/double-axe.png"></div>
+      <div class="bb-league-name center small-shadow">&nbsp;</div>
+      <div class="div-border bb-clan-light"></div>
+      <div class="bb-league-trophy center xlarge-shadow"><img src="images/builderbase/Trophy.png">{{ baseData.versusTrophies }}</div>
+      <div class="div-border bb-clan-dark"></div><br>
+      <div class="bb-league-stats center">
+        <div class="all-time-best small-shadow">
+          <div class="bb-league-stats-title">All time best:</div>
+          <div class="league-bg"><span class="bb-league-stat-icon"><img src="images/builderbase/Trophy.png"></span><span class="bb-league-stat">{{ baseData.bestVersusTrophies }}</div>
+        </div>
+      </div>
+    </div>
+    <div class="div-border stats-dark clear"></div>
+    <div class="bb-stats-info">
+      <span class="bb-stats-title tiny-shadow">Versus Battle Wins:</span>
+      <span class="stats-total">{{ baseData.versusBattleWins }}</span>
+    </div>
+  </div>
+  <div class="town-hall-info">
+    <div class="town-hall left"><img ng-src="{{ townH }}"></div>
+    <div class="avatars left troops small-shadow">
+      <span>Troops</span><br>
+      <div class="avatar-list" ng-repeat="troop in fullTroops | filter: { village: 'builderBase' } | orderBy: 'order'">
+        <div class="avatar">
+          <div ng-class="{'grayscale': troop.level === 0}" style="background: url('images/builderbase/troops/Avatar_{{ troop.name }}.png'); background-size: cover; width: 42px; height: 42px;">
+            <span ng-class="{'max-level': troop.level === troop.endLevel}" ng-show="troop.level !== 0" class="center level-shadow">{{ troop.level }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="avatars right bb-heroes small-shadow">
+      <span>Heroes</span><br>
+      <div class="avatar-list" ng-repeat="hero in fullHeroes | filter: { village: 'builderBase' } | orderBy: 'order'">
+        <div class="avatar">
+          <div ng-class="{'grayscale': hero.level === 0}" style="background: url('images/builderbase/heroes/{{ hero.name }}.png'); background-size: cover; width: 42px; height: 42px;">
+            <span ng-class="{'max-level': hero.level === hero.endLevel}" ng-show="hero.level !== 0" class="center level-shadow">{{ hero.level }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="title-head small-shadow"><img src="images/misc/double-axe.png"> Builder Base Achievements</div>
+  <div class="achievements">
+    <div class="a-list" ng-repeat="achievement in baseData.achievements | filter: { village: 'builderBase' }">
+      <span class="shine">
+      <div class="a-stars achieve left"><img ng-src="images/misc/{{ achievement.stars }}_star_icon.png"></div>
+      <div class="a-info achieve left">
+        <span class="a-title small-shadow">{{ achievement.name }}</span>
+        <span class="a-desc">{{ achievement.info }}</span>
+      </div>
+      <div class="a-status achieve right">
+        <div class="progress" ng-hide="achievement.value >= achievement.target">
+            <span class="shine"></span>
+            <span class="tiny-shadow center">{{ achievement.value }}/{{ achievement.target }}</span>
+            <div class="progress-bar" role="progressbar" aria-valuenow="{{ achievement.value }}" style="width: {{ 100*((+achievement.value)/(+achievement.target)) }}%" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+        <div class="a-status-info" ng-show="achievement.target <= achievement.value">{{ achievement.completionInfo }}<span><img src="images/misc/green-check.png"></div>
+      </div>
+      </span>
+    </div>
+  </div>
+</div>
